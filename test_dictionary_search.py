@@ -42,3 +42,9 @@ def test_dict_in_dict_value_match():
     result = find_key(dictionary, string_key)
     assert result is True
 
+
+def test_nested_dict_in_nested_dict_in_dict_value_match():
+    dictionary = {'1': {'beer': {'pint': 'of beer'}}}
+    string_key = 'pint'
+    result = find_key(dictionary, string_key)
+    assert result is True
