@@ -28,9 +28,15 @@ def test_dict_in__dict():
     result = find_key(dictionary, string_key)
     assert result is True
 
-
-def test_dict_in_dict_value_match():
+def test_dict_in_inner_dict_value_match():
     dictionary = {'1': {'beer': 'pint'}}
     string_key = 'pint'
     result = find_key(dictionary, string_key)
     assert result is False
+
+def test_dict_in_dict_value_match():
+    dictionary = {'1': {'beer': 'pint'}, 'pint': 'of beer'}
+    string_key = 'pint'
+    result = find_key(dictionary, string_key)
+    assert result is True
+
