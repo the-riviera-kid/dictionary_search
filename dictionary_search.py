@@ -5,13 +5,8 @@ def find_key(source_dictionary, target_string):
         return True
     for i in h.values():
         if isinstance(i, dict):
-
-            if target_string in str(i.keys()):
+            result = find_key(i, target_string)
+            if result:
                 return True
-            for j in i.values():
-                if isinstance(j, dict):
-
-                    if target_string in str(j.keys()):
-                        return True
 
     return False
