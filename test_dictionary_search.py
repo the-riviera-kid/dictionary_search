@@ -48,3 +48,35 @@ def test_nested_dict_in_nested_dict_in_dict_value_match():
     string_key = 'pint'
     result = find_key(dictionary, string_key)
     assert result is True
+
+
+def test_find_key_just_a_whole_bunch_of_dicts():
+    dictionary = {
+        '1': {
+            'beer': {
+                'pint': 'of beer'
+            },
+            'pretty': 'printed',
+            'stop': ['hammertime', 'listen'],
+            'data': {
+                'another': True,
+                'dictionary': False,
+            },
+        },
+        '2': {
+            'everybody': 'dance now',
+            'television': {
+                'channel 1': '735hz',
+                'channel 23': '823hz',
+                'channel 9': {
+                    'status': 'OFFLINE',
+                    'reason': 'Insulting the queen',
+                }
+            },
+        }
+    }
+    string_key = 'reason'
+    result = find_key(dictionary, string_key)
+    assert result is True
+
+
